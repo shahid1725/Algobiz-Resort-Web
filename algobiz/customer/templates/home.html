@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{%extends 'base.html' %}
+{%block body_block%}
+
+
+
+<div class="row booklistrow mt-5">
+    {%for product in products%}
+    <div class="col-md-4">
+
+        <div class="card mt-3" style="width: 23rem;">
+            <img style="height:360px;width:100%;" class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}}</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+
+                <div style="display:flex;">
+                    <i class="fas fa-map-marker-alt fa-2x" style="color:darkgrey;"></i>
+                <h5 class="ml-2" style="font-size:20px;">{{product.city}}</h5>
+
+                </div>
+
+
+                <h5 class="mt-3"><strong>₹ {{product.price}}</strong></h5>
+
+
+<div class="map-widget" style="margin-top: 4px">
+    <div style="display:flex;">
+        <label>Google Map View</label>
+        <i class="far fa-hand-point-down ml-3 mt-1"></i>
+    </div>
+
+
+    <div id="map_{{field_name}}" style="width: 500px; height: 200px"></div>
+</div>
+
+                          <a href="" class="btn btn-secondary ">Add To Cart</a>
+                <a href="" type="submit" class="btn btn-success ml-2">Book now</a>
+
+
+
+            </div>
+
+        </div>
+    </div>
+    {%endfor%}
+</div>
+
+{%endblock%}
